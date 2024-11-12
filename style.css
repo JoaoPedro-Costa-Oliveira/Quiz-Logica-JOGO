@@ -1,4 +1,4 @@
-/* Estilos da navegação para fixá-la no topo */
+
 nav {
     background-color: #333;
     color: white;
@@ -28,16 +28,16 @@ nav ul li a {
     font-weight: bold;
 }
 
-/* Ajuste para o contêiner principal do quiz */
+
 .container {
     max-width: 800px;
-    margin: 100px auto 50px auto; /* Ajusta para compensar a navbar */
+    margin: 100px auto 50px auto; 
     background-color: #ddd;
     padding: 20px;
     border-radius: 10px;
 }
 
-/* Estilos do header e cronômetro */
+
 .header-container {
     display: flex;
     flex-direction: column;
@@ -46,12 +46,12 @@ nav ul li a {
 }
 
 #timer {
-    color: #ff4500; /* Cor laranja de destaque */
+    color: #ff4500; 
     font-weight: bold;
     margin-top: 5px;
 }
 
-/* Estilos Gerais */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
