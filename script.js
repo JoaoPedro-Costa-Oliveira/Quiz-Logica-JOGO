@@ -120,7 +120,7 @@ let perguntas = [
 let perguntaAtual = 0;
 let acertos = 0;
 let erros = 0;
-let tempoRestante = 165; // Tempo total em segundos (3 minutos)
+let tempoRestante = 165; 
 let timerInterval;
 
 function iniciarQuiz() {
@@ -175,9 +175,9 @@ function carregarPergunta() {
     const pergunta = perguntas[perguntaAtual];
     document.getElementById('question').innerText = pergunta.pergunta;
     
-    // Limpa opções anteriores e exibe somente o número necessário de botões
+   
     const opcoesContainer = document.querySelector('.options');
-    opcoesContainer.innerHTML = ''; // Limpa as opções anteriores
+    opcoesContainer.innerHTML = ''; 
 
     pergunta.opcoes.forEach((opcao, index) => {
         const botao = document.createElement('button');
@@ -187,15 +187,15 @@ function carregarPergunta() {
         botao.classList.remove('correto', 'errado');
         botao.setAttribute('onclick', `verificarResposta(this, '${opcao.correto ? 'correto' : 'errado'}')`);
         
-        opcoesContainer.appendChild(botao); // Adiciona o botão ao container
+        opcoesContainer.appendChild(botao); 
     });
 }
 
 function mostrarResultado() {
-    clearInterval(timerInterval); // Para o timer
+    clearInterval(timerInterval); 
     const container = document.querySelector('.quiz-container');
     
-    // Determina o feedback com base no número de acertos
+    
     let feedback;
     if (acertos >= 12) {
         feedback = "Excelente! Você tem um ótimo conhecimento de lógica!";
@@ -223,14 +223,13 @@ function reiniciarQuiz() {
         <button id="proxima-pergunta" class="botao" onclick="proximaPergunta()">Próxima Pergunta</button>
     `;
     
-    // Reinicia variáveis de estado
+   
     perguntaAtual = 0;
     acertos = 0;
     erros = 0;
     tempoRestante = 165;
     
-    iniciarQuiz(); // Inicia o quiz novamente
+    iniciarQuiz(); 
 }
 
-// Inicia o quiz automaticamente quando a página é carregada
 document.addEventListener('DOMContentLoaded', iniciarQuiz);
