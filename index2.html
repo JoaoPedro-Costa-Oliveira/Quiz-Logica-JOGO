@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Lógica Matemática</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index2.html">Quiz</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <header class="header-container">
+            <h2>Questionário</h2>
+            <span id="timer">Tempo restante: 2:45</span>
+        </header>
+        
+        <div class="quiz-container">
+            <div id="question" class="question-text">1. Qual é a forma correta da negação da proposição "Todos os pássaros podem voar"?</div>
+            <div class="options">
+                <button class="option" onclick="verificarResposta(this, 'errado')">Nenhum pássaro pode voar</button>
+                <button class="option" onclick="verificarResposta(this, 'correto')">Alguns pássaros não podem voar</button>
+                <button class="option" onclick="verificarResposta(this, 'errado')">Todos os pássaros podem nadar</button>
+            </div>
+            <button id="proxima-pergunta" onclick="proximaPergunta()">Próxima Pergunta</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

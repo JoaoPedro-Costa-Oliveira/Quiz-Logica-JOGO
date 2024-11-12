@@ -1,0 +1,124 @@
+/* Estilos da navegação para fixá-la no topo */
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Ajuste para o contêiner principal do quiz */
+.container {
+    max-width: 800px;
+    margin: 100px auto 50px auto; /* Ajusta para compensar a navbar */
+    background-color: #ddd;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Estilos do header e cronômetro */
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#timer {
+    color: #ff4500; /* Cor laranja de destaque */
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.quiz-container {
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+}
+
+.question-text {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+}
+
+.option {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.option:hover {
+    background-color: #e0e0e0;
+}
+
+.option.correto {
+    background-color: #28a745;
+    color: white;
+}
+
+.option.errado {
+    background-color: #dc3545;
+    color: white;
+}
+
+#proxima-pergunta {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#proxima-pergunta:hover {
+    background-color: #0056b3;
+}
+.botao{
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}

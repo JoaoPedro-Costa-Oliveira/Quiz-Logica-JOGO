@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial - Quiz de Lógica Matemática</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos para a navegação */
+        nav {
+            background-color: #333; /* Cor de fundo da navbar */
+            color: white;
+            padding: 10px;
+            position: fixed; /* Fixa a navbar no topo */
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Estilos para o contêiner principal */
+        .container {
+            margin-top: 60px; /* Espaço para compensar a navbar fixa */
+            text-align: center;
+        }
+
+        .home-container {
+            padding: 20px;
+        }
+
+        .botao {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .botao:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index2.html">Quiz</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <div class="home-container">
+            <h2>Bem-vindo ao Quiz de Lógica Matemática!</h2>
+            <p>Este questionário foi criado como parte dos estudos da disciplina de Lógica Matemática. Ele é composto por 15 perguntas que abordam temas essenciais para o entendimento dos conceitos de proposições, negações, equivalências lógicas e mais.</p>
+            <p>O objetivo do quiz é testar seu conhecimento, preparando-o para a matéria e reforçando seu aprendizado.</p>
+            <p><strong>Como funciona:</strong></p>
+            <ul>
+                <li>Leia cada pergunta com atenção e selecione a resposta correta.</li>
+                <li>O tempo total para completar o quiz é de 2 minutos e 45 segundos . Fique atento ao cronômetro!</li>
+                <li>No final, você receberá um feedback com a quantidade de acertos e como está seu desempenho.</li>
+            </ul>
+            <button class="botao" onclick="iniciarQuiz()">Iniciar Quiz</button>
+        </div>
+    </div>
+
+    <script>
+        function iniciarQuiz() {
+            // Redireciona para a página do quiz
+            window.location.href = 'index2.html';
+        }
+    </script>
+</body>
+</html>
