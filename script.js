@@ -1,6 +1,6 @@
 let perguntas = [
     {
-        pergunta: '1. Qual é a forma correta da negação da proposição "Todos os pássaros podem voar"?',
+        pergunta: ' Qual é a forma correta da negação da proposição "Todos os pássaros podem voar"?',
         opcoes: [
             { texto: 'Nenhum pássaro pode voar', correto: false },
             { texto: 'Alguns pássaros não podem voar', correto: true },
@@ -8,7 +8,7 @@ let perguntas = [
         ]
     },
     {
-        pergunta: '2. A proposição "Se p, então q" é falsa quando:',
+        pergunta: ' A proposição "Se p, então q" é falsa quando:',
         opcoes: [
             { texto: 'p é verdadeira e q é falsa', correto: true },
             { texto: 'p é falsa e q é verdadeira', correto: false },
@@ -16,14 +16,14 @@ let perguntas = [
         ]
     },
     {
-        pergunta: '3. Uma proposição é uma tautologia quando sempre resulta em verdadeiro, independentemente dos valores das partes que a compõem. Essa afirmação define uma tautologia?',
+        pergunta: ' Uma proposição é uma tautologia quando sempre resulta em verdadeiro, independentemente dos valores das partes que a compõem. Essa afirmação define uma tautologia?',
         opcoes: [
             { texto: 'Verdadeiro', correto: true },
             { texto: 'Falso', correto: false }
         ]
     },
     {
-        pergunta: '4. O que é uma proposição composta?',
+        pergunta: ' O que é uma proposição composta?',
         opcoes: [
             { texto: 'Uma proposição que não pode ser verdadeira', correto: false },
             { texto: 'Uma proposição formada por outras proposições', correto: true },
@@ -31,7 +31,7 @@ let perguntas = [
         ]
     },
     {
-        pergunta: '5. O que é uma tabela verdade?',
+        pergunta: ' O que é uma tabela verdade?',
         opcoes: [
             { texto: 'Um método para resolver equações', correto: false },
             { texto: 'Um gráfico de funções matemáticas', correto: false },
@@ -39,14 +39,14 @@ let perguntas = [
         ]
     },
     {
-        pergunta: '6. A proposição "Não p ou q" é exatamente o mesmo que a proposição condicional "Se p, então q" em todas as situações possíveis. Essa afirmação está correta?',
+        pergunta: ' A proposição "Não p ou q" é exatamente o mesmo que a proposição condicional "Se p, então q" em todas as situações possíveis. Essa afirmação está correta?',
         opcoes: [
             { texto: 'Verdadeiro', correto: true },
             { texto: 'Falso', correto: false }
         ]
     },
     {
-        pergunta: '7. Qual das opções abaixo representa uma contradição?',
+        pergunta: ' Qual das opções abaixo representa uma contradição?',
         opcoes: [
             { texto: 'p e não p', correto: true },
             { texto: 'p ou não p', correto: false },
@@ -54,7 +54,7 @@ let perguntas = [
         ]
     },
     {
-        pergunta: '8. A proposição "p se e somente se q" é verdadeira quando:',
+        pergunta: ' A proposição "p se e somente se q" é verdadeira quando:',
         opcoes: [
             { texto: 'p é verdadeira e q é falsa', correto: false },
             { texto: 'p e q são ambas verdadeiras', correto: false },
@@ -62,14 +62,14 @@ let perguntas = [
         ]
     },
     {
-        pergunta: '9. Se uma proposição p é falsa, então dizer que sua negação, "não p", também é falsa está correto?',
+        pergunta: ' Se uma proposição p é falsa, então dizer que sua negação, "não p", também é falsa está correto?',
         opcoes: [
             { texto: 'Verdadeiro', correto: false },
             { texto: 'Falso', correto: true }
         ]
     },
     {
-        pergunta: '10. Qual das seguintes é uma equivalência lógica válida?',
+        pergunta: ' Qual das seguintes é uma equivalência lógica válida?',
         opcoes: [
             { texto: 'p e não p é equivalente a p ou não p', correto: false },
             { texto: 'não (p e q) é equivalente a não p ou não q', correto: true },
@@ -77,7 +77,7 @@ let perguntas = [
         ]
     },
     {
-        pergunta: '11. Se p e q são proposições, qual das seguintes proposições é logicamente equivalente a "p implica q"?',
+        pergunta: ' Se p e q são proposições, qual das seguintes proposições é logicamente equivalente a "p implica q"?',
         opcoes: [
             { texto: 'não p ou q', correto: true },
             { texto: 'p e q', correto: false },
@@ -85,14 +85,14 @@ let perguntas = [
         ]
     },
     {
-        pergunta: '12. A contrapositiva de "Se hoje chove, então não vou ao parque" seria "Se não vou ao parque, então hoje chove". Essa contrapositiva está correta?',
+        pergunta: ' A contrapositiva de "Se hoje chove, então não vou ao parque" seria "Se não vou ao parque, então hoje chove". Essa contrapositiva está correta?',
         opcoes: [
             { texto: 'Verdadeiro', correto: false },
             { texto: 'Falso', correto: true }
         ]
     },
     {
-        pergunta: '13. Em uma tabela verdade, quantas linhas são necessárias para uma proposição composta de 3 variáveis proposicionais?',
+        pergunta: ' Em uma tabela verdade, quantas linhas são necessárias para uma proposição composta de 3 variáveis proposicionais?',
         opcoes: [
             { texto: '6 linhas', correto: false },
             { texto: '4 linhas', correto: false },
@@ -100,7 +100,7 @@ let perguntas = [
         ]
     },
     {
-        pergunta: '14. Dada a proposição composta "(p ou q) e não (p e q)", qual é o seu nome lógico?',
+        pergunta: ' Dada a proposição composta "(p ou q) e não (p e q)", qual é o seu nome lógico?',
         opcoes: [
             { texto: 'Conjunção', correto: false },
             { texto: 'Disjunção exclusiva', correto: true },
@@ -108,7 +108,7 @@ let perguntas = [
         ]
     },
     {
-        pergunta: '15. Duas proposições são logicamente equivalentes se mantêm sempre o mesmo valor de verdade, qualquer que seja a situação. Isso define equivalência lógica?',
+        pergunta: ' Duas proposições são logicamente equivalentes se mantêm sempre o mesmo valor de verdade, qualquer que seja a situação. Isso define equivalência lógica?',
         opcoes: [
             { texto: 'Verdadeiro', correto: true },
             { texto: 'Falso', correto: false }
@@ -231,6 +231,13 @@ function mostrarResultado() {
         <button id="reiniciar-quiz" class="botao" onclick="reiniciarQuiz()">Reiniciar Quiz</button>
     `;
 }
+function embaralharArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+const perguntasOriginal = [...perguntas];
 
 function reiniciarQuiz() {
     const container = document.querySelector('.quiz-container');
@@ -245,8 +252,10 @@ function reiniciarQuiz() {
     acertos = 0;
     erros = 0;
     tempoRestante = 180;
+    embaralharArray(perguntas);
     
     iniciarQuiz(); 
 }
+
 
 document.addEventListener('DOMContentLoaded', iniciarQuiz);
