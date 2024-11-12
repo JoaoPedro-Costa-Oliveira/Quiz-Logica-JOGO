@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz de Lógica</title>
+    <title>Quiz de Lógica Matemática</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,17 +17,17 @@
     <div class="container">
         <header class="header-container">
             <h2>Questionário</h2>
-            <span id="question-number"></span> 
             <span id="timer">Tempo restante: 3:00</span>
+            <h3><span id="question-number"></span></h3> 
             
         </header>
         
         <div class="quiz-container">
-            <div id="question" class="question-text">1. Qual é a forma correta da negação da proposição "Todos os pássaros podem voar"?</div>
+            <div id="question" class="question-text"></div>
             <div class="options">
-                <button class="option" onclick="verificarResposta(this, 'errado')">Nenhum pássaro pode voar</button>
-                <button class="option" onclick="verificarResposta(this, 'correto')">Alguns pássaros não podem voar</button>
-                <button class="option" onclick="verificarResposta(this, 'errado')">Todos os pássaros podem nadar</button>
+                <button class="option" onclick="verificarResposta(this, 'errado')"></button>
+                <button class="option" onclick="verificarResposta(this, 'correto')"></button>
+                <button class="option" onclick="verificarResposta(this, 'errado')"></button>
             </div>
             <button id="proxima-pergunta" onclick="proximaPergunta()">Próxima Pergunta</button>
         </div>
