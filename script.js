@@ -161,7 +161,24 @@ function desabilitarOpcoes() {
         opcao.disabled = true;
     });
 }
-
+function verificarResposta(botao, status) {
+    if (status === 'correto') {
+        botao.classList.add('correto');
+        acertos++;
+    } else {
+        botao.classList.add('errado');
+        erros++;
+        
+        
+        const opcoes = document.querySelectorAll('.option');
+        opcoes.forEach(opcao => {
+            if (opcao.innerText === perguntas[perguntaAtual].opcoes.find(op => op.correto).texto) {
+                opcao.classList.add('correto');
+            }
+        });
+    }
+    desabilitarOpcoes();
+}
 function proximaPergunta() {
     perguntaAtual++;
     if (perguntaAtual < perguntas.length) {
