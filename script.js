@@ -34,8 +34,8 @@ let perguntas = [
         pergunta: '5. O que é uma tabela verdade?',
         opcoes: [
             { texto: 'Um método para resolver equações', correto: false },
-            { texto: 'Uma tabela que mostra todos os valores de verdade possíveis de uma proposição', correto: true },
-            { texto: 'Um gráfico de funções matemáticas', correto: false }
+            { texto: 'Um gráfico de funções matemáticas', correto: false },
+            { texto: 'Uma tabela que mostra todos os valores de verdade possíveis de uma proposição', correto: true }
         ]
     },
     {
@@ -48,17 +48,17 @@ let perguntas = [
     {
         pergunta: '7. Qual das opções abaixo representa uma contradição?',
         opcoes: [
-            { texto: 'p ou não p', correto: false },
             { texto: 'p e não p', correto: true },
+            { texto: 'p ou não p', correto: false },
             { texto: 'p e q', correto: false }
         ]
     },
     {
         pergunta: '8. A proposição "p se e somente se q" é verdadeira quando:',
         opcoes: [
-            { texto: 'p e q são ambas verdadeiras ou ambas falsas', correto: true },
             { texto: 'p é verdadeira e q é falsa', correto: false },
-            { texto: 'p e q são ambas verdadeiras', correto: false }
+            { texto: 'p e q são ambas verdadeiras', correto: false },
+            { texto: 'p e q são ambas verdadeiras ou ambas falsas', correto: true }
         ]
     },
     {
@@ -72,8 +72,8 @@ let perguntas = [
         pergunta: '10. Qual das seguintes é uma equivalência lógica válida?',
         opcoes: [
             { texto: 'p e não p é equivalente a p ou não p', correto: false },
-            { texto: 'p ou não p é equivalente a p ou q', correto: false },
-            { texto: 'não (p e q) é equivalente a não p ou não q', correto: true }
+            { texto: 'não (p e q) é equivalente a não p ou não q', correto: true },
+            { texto: 'p ou não p é equivalente a p ou q', correto: false }
         ]
     },
     {
@@ -95,8 +95,8 @@ let perguntas = [
         pergunta: '13. Em uma tabela verdade, quantas linhas são necessárias para uma proposição composta de 3 variáveis proposicionais?',
         opcoes: [
             { texto: '6 linhas', correto: false },
-            { texto: '8 linhas', correto: true },
-            { texto: '4 linhas', correto: false }
+            { texto: '4 linhas', correto: false },
+            { texto: '8 linhas', correto: true }
         ]
     },
     {
@@ -227,7 +227,7 @@ function reiniciarQuiz() {
     perguntaAtual = 0;
     acertos = 0;
     erros = 0;
-    tempoRestante = 150;
+    tempoRestante = 165;
     
     iniciarQuiz(); // Inicia o quiz novamente
 }
