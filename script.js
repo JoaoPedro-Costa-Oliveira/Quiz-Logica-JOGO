@@ -120,7 +120,7 @@ let perguntas = [
 let perguntaAtual = 0;
 let acertos = 0;
 let erros = 0;
-let tempoRestante = 180; 
+let tempoRestante = 210; 
 let timerInterval;
 
 function iniciarQuiz() {
@@ -251,7 +251,7 @@ function reiniciarQuiz() {
     perguntaAtual = 0;
     acertos = 0;
     erros = 0;
-    tempoRestante = 180;
+    tempoRestante = 210;
     embaralharArray(perguntas);
     
     iniciarQuiz(); 
