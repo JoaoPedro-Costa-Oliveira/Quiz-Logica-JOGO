@@ -120,7 +120,7 @@ let perguntas = [
 let perguntaAtual = 0;
 let acertos = 0;
 let erros = 0;
-let tempoRestante = 165; 
+let tempoRestante = 190; 
 let timerInterval;
 
 function iniciarQuiz() {
@@ -155,6 +155,7 @@ function verificarResposta(botao, status) {
     desabilitarOpcoes();
 }
 
+
 function desabilitarOpcoes() {
     const opcoes = document.querySelectorAll('.option');
     opcoes.forEach(opcao => {
@@ -169,7 +170,6 @@ function verificarResposta(botao, status) {
         botao.classList.add('errado');
         erros++;
         
-        
         const opcoes = document.querySelectorAll('.option');
         opcoes.forEach(opcao => {
             if (opcao.innerText === perguntas[perguntaAtual].opcoes.find(op => op.correto).texto) {
@@ -179,6 +179,7 @@ function verificarResposta(botao, status) {
     }
     desabilitarOpcoes();
 }
+
 function proximaPergunta() {
     perguntaAtual++;
     if (perguntaAtual < perguntas.length) {
@@ -190,11 +191,12 @@ function proximaPergunta() {
 
 function carregarPergunta() {
     const pergunta = perguntas[perguntaAtual];
+    
+    document.getElementById('question-number').innerText = `Pergunta ${perguntaAtual + 1} de ${perguntas.length}`;
     document.getElementById('question').innerText = pergunta.pergunta;
     
-   
     const opcoesContainer = document.querySelector('.options');
-    opcoesContainer.innerHTML = ''; 
+    opcoesContainer.innerHTML = '';
 
     pergunta.opcoes.forEach((opcao, index) => {
         const botao = document.createElement('button');
@@ -211,7 +213,6 @@ function carregarPergunta() {
 function mostrarResultado() {
     clearInterval(timerInterval); 
     const container = document.querySelector('.quiz-container');
-    
     
     let feedback;
     if (acertos >= 12) {
@@ -235,16 +236,15 @@ function reiniciarQuiz() {
     const container = document.querySelector('.quiz-container');
     
     container.innerHTML = `
-        <h2 id="question"></h2>
+        <div id="question" class="question-text"></div>
         <div class="options"></div>
         <button id="proxima-pergunta" class="botao" onclick="proximaPergunta()">Próxima Pergunta</button>
     `;
     
-   
     perguntaAtual = 0;
     acertos = 0;
     erros = 0;
-    tempoRestante = 165;
+    tempoRestante = 190;
     
     iniciarQuiz(); 
 }
