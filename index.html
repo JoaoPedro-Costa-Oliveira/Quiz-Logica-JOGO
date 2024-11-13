@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Inicial - Quiz de Lógica</title>
+    <title>Página Inicial - Quiz de Lógica Matemática</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        
         nav {
             background-color: #333; 
             color: white;
@@ -37,12 +36,26 @@
         }
 
         .container {
-            margin-top: 60px; 
+            margin-top: 60px;
             text-align: center;
         }
 
         .home-container {
             padding: 20px;
+            text-align: left;
+            letter-spacing: px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .home-container h2 {
+            text-align: center;
+            
+        }
+
+        .botao-container {
+            text-align: center;
+            margin-top: 20px;
         }
 
         .botao {
@@ -71,22 +84,38 @@
     <div class="container">
         <div class="home-container">
             <h2>Bem-vindo ao Quiz de Lógica!</h2>
-            <p>Este questionário foi criado como parte dos estudos da cadeira de Lógica. Ele é composto por 15 perguntas que abordam temas essenciais para o entendimento dos conceitos de proposições, negações, equivalências lógicas e mais.</p>
-            <p>O objetivo do quiz é testar seu conhecimento, preparando-o para a matéria e reforçando seu aprendizado.</p>
+            <p>Este questionário foi criado como parte dos estudos da cadeira de Lógica e utilizamos feedback de usuários teste. Ele é composto por 15 perguntas que abordam temas essenciais para o entendimento dos conceitos de proposições, negações, equivalências lógicas e tabela verdade.</p>
+            <p>O objetivo do quiz é testar seu conhecimento, preparando-o para a matéria e reforçando seu aprendizado, oferecendo uma oportunidade de aprendizado instantâneo, incentivando o usuário a reavaliar seu pensamento.</p>
+            <p><strong>Como aplicamos nossas ideias:</strong></p>
+            <ul>
+                <li>Aplicamos as ideias no quiz de forma criativa ao transformar conceitos de lógica, que muitas vezes são abstratos, em um jogo interativo.</li>
+                <p></p>
+                <li>A estrutura das perguntas incentiva o usuário a raciocinar sobre as proposições e relacionamentos lógicos, promovendo uma experiência mais envolvente do que a simples memorização.</li>
+                <p></p>
+                <li>Utilizamos um cronômetro que desafia o usuário a raciocinar rapidamente, exercitando o pensamento crítico sob pressão, semelhante a um ambiente de prova.</li>
+                <p></p>
+                <li>Criamos feedback imediato, ao destacar a resposta correta quando o usuário erra.</li>
+                <p></p>
+                <li>Adotamos o procedimento aleatório dos enunciados no momento de reinicialização, com o intuito de manter o quiz sempre novo e desafiador, sem que o usuário perca a evolução da estrutura numérica das perguntas.</li>
+            </ul>
             <p><strong>Como funciona:</strong></p>
             <ul>
                 <li>Leia cada pergunta com atenção e selecione a resposta correta.</li>
-                <li>O tempo total para completar o quiz é de 3 minutos e 30 segundos. Fique atento ao cronômetro!</li>
+                <p></p>
+                <li>Fique atento ao cronômetro! O tempo total para completar o quiz é de 3 minutos e 30 segundos.</li>
+                <p></p>
                 <li>No final, você receberá um feedback com a quantidade de acertos e como está seu desempenho.</li>
-                <li>Ao errar uma questão ele ira mostrar qual era a correta</li>
+                <p></p>
+                <li>Ao errar uma questão ele irá mostrar qual era a correta.</li>
             </ul>
-            <button class="botao" onclick="iniciarQuiz()">Iniciar Quiz</button>
+            <div class="botao-container">
+                <button class="botao" onclick="iniciarQuiz()">Iniciar Quiz</button>
+            </div>
         </div>
     </div>
 
     <script>
         function iniciarQuiz() {
-            
             window.location.href = 'index2.html';
         }
     </script>
