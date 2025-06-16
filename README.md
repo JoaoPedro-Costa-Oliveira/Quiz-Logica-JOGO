@@ -81,4 +81,4 @@ Este projeto foi uma excelente introdução ao desenvolvimento web com JavaScrip
 Se quiser acompanhar minha jornada e novos projetos:
 
 - GitHub: [JoaoPedro-Costa-Oliveira](https://github.com/JoaoPedro-Costa-Oliveira)  
-- LinkedIn: *[João Pedro Costa de Oliveira](www.linkedin.com/in/joão-pedro-costa-de-oliveira-1bb5912b8)*  
+- LinkedIn: [João Pedro Costa de Oliveira](http://www.linkedin.com/in/jo%C3%A3o-pedro-costa-de-oliveira-1bb5912b8) 
