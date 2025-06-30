@@ -1,84 +1,82 @@
-# 🧠 Quiz de Lógica Matemática
+# 🧠 Quiz de Lógica - Desafio Cesar School
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/1b02f943-f84f-4b35-aaa4-099b4a342bbb/deploy-status)](https://quiz-logica.netlify.app/)
+[![Status do Deploy](https://api.netlify.com/api/v1/badges/1b02f943-f84f-4b35-aaa4-099b4a342bbb/deploy-status)](https://quiz-logica.netlify.app/)
+[![Licença: MIT](https://img.shields.io/badge/Licen%C3%A7a-MIT-orange.svg)](https://opensource.org/licenses/MIT)
 
-Este projeto foi desenvolvido como parte de um trabalho da disciplina de **Lógica**, no **segundo período** do curso de **Sistemas de Informação**. 
+<br>
 
-Trata-se de um **jogo estilo quiz interativo**, feito com **HTML, CSS e JavaScript**, com foco em testar os conhecimentos lógicos dos jogadores de maneira divertida e acessível.
+<p align="center">
+  <img src="URL_DO_SEU_GIF_OU_SCREENSHOT_AQUI" alt="Demonstração do Quiz de Lógica" width="80%">
+</p>
 
-> ✅ Acesse aqui: [quiz-logica.netlify.app](https://quiz-logica.netlify.app/)
+<p align="center">
+  Um quiz interativo e desafiador desenvolvido como projeto acadêmico para a disciplina de Lógica Matemática na Cesar School.
+</p>
+
+<p align="center">
+  <a href="https://quiz-logica.netlify.app/"><strong>Acessar Demonstração Ao Vivo »</strong></a>
+</p>
 
 ---
 
-## 🎯 Objetivo
+## 🚀 Sobre o Projeto
 
-Transformar o aprendizado de lógica matemática em uma experiência prática, interativa e divertida, estimulando o raciocínio lógico através de perguntas progressivas e desafios com feedback instantâneo.
+Este projeto é uma **Aplicação de Página Única (SPA)** desenvolvida com HTML, CSS e JavaScript puro, que gamifica o aprendizado de conceitos fundamentais de lógica. A aplicação foi criada com foco em boas práticas de desenvolvimento web, design responsivo e uma experiência de usuário fluida e intuitiva.
 
----
+O objetivo principal é transformar o estudo da lógica, muitas vezes abstrato, em uma atividade prática e engajadora, servindo como uma ferramenta de reforço e autoavaliação para estudantes.
 
-## 🚀 Funcionalidades
+### ✨ Funcionalidades Principais
 
-- ✅ 15 perguntas com níveis **fácil, médio e difícil**  
-- ✅ Questões de **múltipla escolha** e **verdadeiro ou falso**  
-- ✅ **Contador de pontuação** em tempo real  
-- ✅ Feedback ao usuário com mensagens e cores  
-- ✅ Interface simples, intuitiva e responsiva  
-- ✅ 100% feito com **HTML, CSS e JavaScript puro**  
-- ✅ **Publicação online no Netlify**
+* **Arquitetura SPA:** Navegação rápida e dinâmica sem recarregamento da página.
+* **Design Profissional:** Interface moderna e responsiva, inspirada na identidade visual da Cesar School.
+* **Gamificação Completa:**
+    * **Pontuação Dinâmica:** Baseada na dificuldade da pergunta e no tempo de resposta.
+    * **Ranking Persistente:** O Top 5 é salvo no navegador do usuário via `localStorage`.
+    * **Timer Individual:** Cada pergunta tem um cronômetro para aumentar o desafio.
+* **Alta Rejogabilidade:** As perguntas e as opções de resposta são embaralhadas a cada nova partida.
+* **Feedback Construtivo:** Explicações claras são fornecidas após cada resposta para reforçar o aprendizado.
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-- HTML5  
-- CSS3  
-- JavaScript (puro)  
-- Netlify (deploy)
+O projeto foi construído utilizando as tecnologias essenciais do front-end:
+
+* **HTML5:** Para a estrutura semântica do conteúdo.
+* **CSS3:** Para o design, layout responsivo e animações, utilizando Flexbox, Grid e Variáveis CSS.
+* **JavaScript (ES6+):** Para toda a lógica do jogo, manipulação do DOM e gerenciamento de estado da aplicação.
+* **Netlify:** Para o deploy contínuo e hospedagem da aplicação.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
+</p>
 
 ---
 
-## 👨‍💻 Aprendizados
+## ⚙️ Como Executar Localmente
 
-- Manipulação do DOM com JavaScript  
-- Controle de fluxo e lógica de programação  
-- Design de jogos educativos simples  
-- Implementação de interações com o usuário  
-- Estruturação e organização de projetos web  
-- Publicação de sites estáticos com Netlify
+Para rodar o projeto em sua máquina, siga os passos abaixo:
 
----
-
-## 📚 Sobre o Projeto
-
-Este quiz foi desenvolvido em grupo como atividade prática de lógica matemática. É um projeto introdutório, mas que representa o esforço e aprendizado nas primeiras semanas de contato com **programação web**.
-
-O foco principal foi a aplicação prática dos conceitos de lógica aprendidos em sala, utilizando **ferramentas simples e acessíveis** para todos os integrantes do grupo.
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/JoaoPedro-Costa-Oliveira/Quiz-Logica-JOGO.git](https://github.com/JoaoPedro-Costa-Oliveira/Quiz-Logica-JOGO.git)
+    ```
+2.  **Acesse a pasta do projeto:**
+    ```bash
+    cd Quiz-Logica-JOGO
+    ```
+3.  **Abra o `index.html`:**
+    Não é necessário instalar nenhuma dependência. Simplesmente abra o arquivo `index.html` no seu navegador de preferência.
 
 ---
 
-## 🖼️ Imagens (prints)
+## 🎓 Autor
 
-> (📌 Sugerido: aqui você pode adicionar imagens do quiz rodando. Para isso, salve prints e arraste para o repositório ou use links externos)
+| [<img src="https://avatars.githubusercontent.com/u/148973612?v=4" width=115><br><sub>João Pedro C. Oliveira</sub>](https://github.com/JoaoPedro-Costa-Oliveira) |
+| :---: |
 
----
-
-## 🔗 Acesse Agora
-
-🎮 **Jogue agora mesmo:**  
-👉 [https://quiz-logica.netlify.app](https://quiz-logica.netlify.app)
-
----
-
-
-## 📌 Observações
-
-Este projeto foi uma excelente introdução ao desenvolvimento web com JavaScript, e serviu como base para projetos futuros com maior complexidade.
-
----
-
-## 📎 Contato
-
-Se quiser acompanhar minha jornada e novos projetos:
-
-- GitHub: [JoaoPedro-Costa-Oliveira](https://github.com/JoaoPedro-Costa-Oliveira)  
-- LinkedIn: [João Pedro Costa de Oliveira](http://www.linkedin.com/in/jo%C3%A3o-pedro-costa-de-oliveira-1bb5912b8) 
+<p align="center">
+  Feito com ❤️ por João Pedro. <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-costa-de-oliveira-1bb5912b8/" target="_blank">Entre em contato!</a>
+</p>
