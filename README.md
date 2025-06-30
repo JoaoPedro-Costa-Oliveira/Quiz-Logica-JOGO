@@ -1,6 +1,6 @@
 # 🧠 Quiz de Lógica - Desafio Cesar School
 
-[![Status do Deploy](https://api.netlify.com/api/v1/badges/1b02f943-f84f-4b35-aaa4-099b4a342bbb/deploy-status)](https://quiz-logica.netlify.app/)
+(https://api.netlify.com/api/v1/badges/1b02f943-f84f-4b35-aaa4-099b4a342bbb/deploy-status)](https://quiz-logica.netlify.app/)
 [![Licença: MIT](https://img.shields.io/badge/Licen%C3%A7a-MIT-orange.svg)](https://opensource.org/licenses/MIT)
 
 <br>
