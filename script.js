@@ -1,261 +1,346 @@
-let perguntas = [
-    {
-        pergunta: ' Qual é a forma correta da negação da proposição "Todos os pássaros podem voar"?',
-        opcoes: [
-            { texto: 'Nenhum pássaro pode voar', correto: false },
-            { texto: 'Alguns pássaros não podem voar', correto: true },
-            { texto: 'Todos os pássaros podem nadar', correto: false }
-        ]
-    },
-    {
-        pergunta: ' A proposição "Se p, então q" é falsa quando:',
-        opcoes: [
-            { texto: 'p é verdadeira e q é falsa', correto: true },
-            { texto: 'p é falsa e q é verdadeira', correto: false },
-            { texto: 'p e q são verdadeiras', correto: false }
-        ]
-    },
-    {
-        pergunta: ' Uma proposição é uma tautologia quando sempre resulta em verdadeiro, independentemente dos valores das partes que a compõem. Essa afirmação define uma tautologia?',
-        opcoes: [
-            { texto: 'Verdadeiro', correto: true },
-            { texto: 'Falso', correto: false }
-        ]
-    },
-    {
-        pergunta: ' O que é uma proposição composta?',
-        opcoes: [
-            { texto: 'Uma proposição que não pode ser verdadeira', correto: false },
-            { texto: 'Uma proposição formada por outras proposições', correto: true },
-            { texto: 'Uma proposição que contém variáveis', correto: false }
-        ]
-    },
-    {
-        pergunta: ' O que é uma tabela verdade?',
-        opcoes: [
-            { texto: 'Um método para resolver equações', correto: false },
-            { texto: 'Um gráfico de funções matemáticas', correto: false },
-            { texto: 'Uma tabela que mostra todos os valores de verdade possíveis de uma proposição', correto: true }
-        ]
-    },
-    {
-        pergunta: ' A proposição "Não p ou q" é exatamente o mesmo que a proposição condicional "Se p, então q" em todas as situações possíveis. Essa afirmação está correta?',
-        opcoes: [
-            { texto: 'Verdadeiro', correto: true },
-            { texto: 'Falso', correto: false }
-        ]
-    },
-    {
-        pergunta: ' Qual das opções abaixo representa uma contradição?',
-        opcoes: [
-            { texto: 'p e não p', correto: true },
-            { texto: 'p ou não p', correto: false },
-            { texto: 'p e q', correto: false }
-        ]
-    },
-    {
-        pergunta: ' A proposição "p se e somente se q" é verdadeira quando:',
-        opcoes: [
-            { texto: 'p é verdadeira e q é falsa', correto: false },
-            { texto: 'p e q são ambas verdadeiras', correto: false },
-            { texto: 'p e q são ambas verdadeiras ou ambas falsas', correto: true }
-        ]
-    },
-    {
-        pergunta: ' Se uma proposição p é falsa, então dizer que sua negação, "não p", também é falsa está correto?',
-        opcoes: [
-            { texto: 'Verdadeiro', correto: false },
-            { texto: 'Falso', correto: true }
-        ]
-    },
-    {
-        pergunta: ' Qual das seguintes é uma equivalência lógica válida?',
-        opcoes: [
-            { texto: 'p e não p é equivalente a p ou não p', correto: false },
-            { texto: 'não (p e q) é equivalente a não p ou não q', correto: true },
-            { texto: 'p ou não p é equivalente a p ou q', correto: false }
-        ]
-    },
-    {
-        pergunta: ' Se p e q são proposições, qual das seguintes proposições é logicamente equivalente a "p implica q"?',
-        opcoes: [
-            { texto: 'não p ou q', correto: true },
-            { texto: 'p e q', correto: false },
-            { texto: 'p ou não q', correto: false }
-        ]
-    },
-    {
-        pergunta: ' A contrapositiva de "Se hoje chove, então não vou ao parque" seria "Se não vou ao parque, então hoje chove". Essa contrapositiva está correta?',
-        opcoes: [
-            { texto: 'Verdadeiro', correto: false },
-            { texto: 'Falso', correto: true }
-        ]
-    },
-    {
-        pergunta: ' Em uma tabela verdade, quantas linhas são necessárias para uma proposição composta de 3 variáveis proposicionais?',
-        opcoes: [
-            { texto: '6 linhas', correto: false },
-            { texto: '4 linhas', correto: false },
-            { texto: '8 linhas', correto: true }
-        ]
-    },
-    {
-        pergunta: ' Dada a proposição composta "(p ou q) e não (p e q)", qual é o seu nome lógico?',
-        opcoes: [
-            { texto: 'Conjunção', correto: false },
-            { texto: 'Disjunção exclusiva', correto: true },
-            { texto: 'Bicondicional', correto: false }
-        ]
-    },
-    {
-        pergunta: ' Duas proposições são logicamente equivalentes se mantêm sempre o mesmo valor de verdade, qualquer que seja a situação. Isso define equivalência lógica?',
-        opcoes: [
-            { texto: 'Verdadeiro', correto: true },
-            { texto: 'Falso', correto: false }
-        ]
+// --- MÓDULO DO QUIZ (IIFE - Immediately Invoked Function Expression) ---
+// Isso cria um escopo privado para evitar poluir o escopo global.
+const QuizApp = (() => {
+    // --- MAPEAMENTO DOS ELEMENTOS (DOM) ---
+    const screens = {
+        home: document.getElementById('home-screen'),
+        quiz: document.getElementById('quiz-screen'),
+        end: document.getElementById('end-screen'),
+    };
+    
+    // Elementos da Interface
+    const playerNameInput = document.getElementById('player-name');
+    const startButton = document.getElementById('start-button');
+    const progressBar = document.getElementById('progress-bar');
+    const questionCounter = document.getElementById('question-counter');
+    const scoreElement = document.getElementById('score');
+    const timerBarInner = document.getElementById('timer-bar-inner');
+    const questionElement = document.getElementById('question');
+    const optionsContainer = document.getElementById('options-container');
+    const feedbackText = document.getElementById('feedback-text');
+    const nextButton = document.getElementById('next-question-button');
+    const finalScoreElement = document.getElementById('final-score');
+    const rankingList = document.getElementById('ranking-list');
+    const restartButton = document.getElementById('restart-button');
+    const goHomeButton = document.getElementById('go-home-button');
+    
+    // Elementos de Navegação
+    const navHome = document.getElementById('nav-home');
+    const navRanking = document.getElementById('nav-ranking');
+    const sidebar = document.getElementById('sidebar');
+    const menuToggle = document.getElementById('menu-toggle');
+    
+    // Elementos da Tela Final
+    const endTitle = document.getElementById('end-title');
+    const endFeedbackText = document.getElementById('end-feedback-text');
+
+    // --- DADOS DO QUIZ (LISTA COMPLETA COM 15 PERGUNTAS) ---
+    const questions = [
+        {
+            pergunta: 'Qual é a forma correta da negação da proposição "Todos os pássaros podem voar"?',
+            opcoes: ['Nenhum pássaro pode voar', 'Alguns pássaros não podem voar', 'Todos os pássaros podem nadar'],
+            resposta: 'Alguns pássaros não podem voar',
+            dificuldade: 'facil',
+            explicacao: 'A negação de "Todos" (universal afirmativa) é "Pelo menos um não" ou "Alguns não" (particular negativa).'
+        },
+        {
+            pergunta: 'A proposição "Se p, então q" é falsa quando:',
+            opcoes: ['p é verdadeira e q é falsa', 'p é falsa e q é verdadeira', 'p e q são verdadeiras'],
+            resposta: 'p é verdadeira e q é falsa',
+            dificuldade: 'facil',
+            explicacao: 'A única condição que torna uma condicional (p → q) falsa é ter um antecedente verdadeiro e um consequente falso.'
+        },
+        {
+            pergunta: 'Uma proposição é uma tautologia quando sempre resulta em verdadeiro. Essa afirmação define uma tautologia?',
+            opcoes: ['Verdadeiro', 'Falso'],
+            resposta: 'Verdadeiro',
+            dificuldade: 'facil',
+            explicacao: 'Correto, uma tautologia é uma proposição que é sempre verdadeira. Ex: (p ∨ ¬p).'
+        },
+        {
+            pergunta: 'O que é uma proposição composta?',
+            opcoes: ['Uma proposição que não pode ser verdadeira', 'Uma proposição formada por outras proposições', 'Uma proposição que contém variáveis'],
+            resposta: 'Uma proposição formada por outras proposições',
+            dificuldade: 'facil',
+            explicacao: 'Uma proposição composta é formada pela combinação de proposições simples através de conectivos lógicos.'
+        },
+        {
+            pergunta: 'O que é uma tabela verdade?',
+            opcoes: ['Um método para resolver equações', 'Um gráfico de funções matemáticas', 'Uma tabela que mostra todos os valores de verdade possíveis de uma proposição'],
+            resposta: 'Uma tabela que mostra todos os valores de verdade possíveis de uma proposição',
+            dificuldade: 'facil',
+            explicacao: 'A tabela verdade é usada para determinar o valor lógico de uma proposição composta para todas as combinações de valores.'
+        },
+        {
+            pergunta: 'A proposição "Não p ou q" é logicamente equivalente a "Se p, então q"?',
+            opcoes: ['Verdadeiro', 'Falso'],
+            resposta: 'Verdadeiro',
+            dificuldade: 'medio',
+            explicacao: 'Esta é a "equivalência da condicional": (p → q) ⇔ (¬p ∨ q).'
+        },
+        {
+            pergunta: 'Qual das opções abaixo representa uma contradição?',
+            opcoes: ['p e não p', 'p ou não p', 'p e q'],
+            resposta: 'p e não p',
+            dificuldade: 'medio',
+            explicacao: 'Uma contradição (p ∧ ¬p) é uma proposição que é sempre falsa.'
+        },
+        {
+            pergunta: 'A proposição "p se e somente se q" é verdadeira quando:',
+            opcoes: ['p é verdadeira e q é falsa', 'p e q são ambas verdadeiras', 'p e q são ambas verdadeiras ou ambas falsas'],
+            resposta: 'p e q são ambas verdadeiras ou ambas falsas',
+            dificuldade: 'medio',
+            explicacao: 'A bicondicional (p ↔ q) é verdadeira apenas quando p e q têm o mesmo valor lógico.'
+        },
+        {
+            pergunta: 'Se uma proposição p é falsa, sua negação "não p" é:',
+            opcoes: ['Verdadeira', 'Falsa', 'Depende de p'],
+            resposta: 'Verdadeira',
+            dificuldade: 'facil',
+            explicacao: 'Pelo princípio da não contradição, se uma proposição é falsa, sua negação é obrigatoriamente verdadeira.'
+        },
+        {
+            pergunta: 'Qual é a Lei de De Morgan para a negação de uma conjunção?',
+            opcoes: ['não (p e q) ⇔ não p e não q', 'não (p e q) ⇔ não p ou não q', 'não (p ou q) ⇔ não p ou não q'],
+            resposta: 'não (p e q) ⇔ não p ou não q',
+            dificuldade: 'dificil',
+            explicacao: 'A negação de uma conjunção é a disjunção das negações: ¬(p ∧ q) ⇔ (¬p ∨ ¬q).'
+        },
+        {
+            pergunta: 'A contrapositiva de "Se chove, então fico em casa" é:',
+            opcoes: ['Se não chove, então não fico em casa', 'Se fico em casa, então chove', 'Se não fico em casa, então não chove'],
+            resposta: 'Se não fico em casa, então não chove',
+            dificuldade: 'dificil',
+            explicacao: 'A contrapositiva de (p → q) é (¬q → ¬p), trocando a ordem e negando ambas as partes.'
+        },
+        {
+            pergunta: 'Quantas linhas tem a tabela verdade para uma proposição com 3 variáveis (p,q,r)?',
+            opcoes: ['6', '4', '8'],
+            resposta: '8',
+            dificuldade: 'medio',
+            explicacao: 'O número de linhas é 2 elevado ao número de variáveis (n). Portanto, 2³ = 8.'
+        },
+        {
+            pergunta: 'A expressão "(p ou q) e não (p e q)" define qual conectivo?',
+            opcoes: ['Conjunção', 'Disjunção exclusiva', 'Bicondicional'],
+            resposta: 'Disjunção exclusiva',
+            dificuldade: 'dificil',
+            explicacao: 'Esta é a definição da disjunção exclusiva (ou "ou exclusivo", p ⊕ q), que é verdadeira apenas quando uma das proposições é verdadeira, mas não ambas.'
+        },
+    ];
+
+    // --- ESTADO DO JOGO ---
+    let state = {};
+
+    function initState() {
+        state = {
+            playerName: '',
+            score: 0,
+            currentQuestionIndex: 0,
+            shuffledQuestions: [],
+            timerInterval: null,
+            timeLeft: 0,
+            questionStartTime: 0,
+        };
     }
-];
+    
+    const TIME_PER_QUESTION = 15;
 
+    // --- FUNÇÕES AUXILIARES ---
+    const shuffleArray = (array) => [...array].sort(() => Math.random() - 0.5);
 
-let perguntaAtual = 0;
-let acertos = 0;
-let erros = 0;
-let tempoRestante = 210; 
-let timerInterval;
-
-function iniciarQuiz() {
-    iniciarTimer();
-    carregarPergunta();
-}
-
-function iniciarTimer() {
-    const timerDisplay = document.getElementById('timer');
-    timerInterval = setInterval(() => {
-        let minutos = Math.floor(tempoRestante / 60);
-        let segundos = tempoRestante % 60;
-        timerDisplay.innerText = `Tempo restante: ${minutos}:${segundos < 10 ? '0' : ''}${segundos}`;
+    // --- FUNÇÕES DE CONTROLE DE TELA ---
+    function showScreen(screenName) {
+        Object.values(screens).forEach(screen => screen.classList.add('hide'));
         
-        if (tempoRestante === 0) {
-            clearInterval(timerInterval);
-            mostrarResultado();
+        document.querySelectorAll('.sidebar-nav a').forEach(link => link.classList.remove('active'));
+        const activeLink = document.getElementById(`nav-${screenName}`);
+        if (activeLink) activeLink.classList.add('active');
+
+        if (screenName === 'ranking') {
+            endTitle.innerText = "Ranking dos Melhores";
+            endFeedbackText.innerText = "Veja os melhores jogadores até agora!";
+            finalScoreElement.parentElement.classList.add('hide');
+            restartButton.classList.add('hide');
+            goHomeButton.classList.remove('hide');
+            loadRanking();
+            screens.end.classList.remove('hide');
         } else {
-            tempoRestante--;
+            screens[screenName].classList.remove('hide');
         }
-    }, 1000);
-}
-
-function verificarResposta(botao, status) {
-    if (status === 'correto') {
-        botao.classList.add('correto');
-        acertos++;
-    } else {
-        botao.classList.add('errado');
-        erros++;
-    }
-    desabilitarOpcoes();
-}
-
-
-function desabilitarOpcoes() {
-    const opcoes = document.querySelectorAll('.option');
-    opcoes.forEach(opcao => {
-        opcao.disabled = true;
-    });
-}
-function verificarResposta(botao, status) {
-    if (status === 'correto') {
-        botao.classList.add('correto');
-        acertos++;
-    } else {
-        botao.classList.add('errado');
-        erros++;
         
-        const opcoes = document.querySelectorAll('.option');
-        opcoes.forEach(opcao => {
-            if (opcao.innerText === perguntas[perguntaAtual].opcoes.find(op => op.correto).texto) {
-                opcao.classList.add('correto');
+        // Fecha a sidebar em telas pequenas ao navegar
+        if (window.innerWidth <= 992) {
+            sidebar.classList.remove('open');
+        }
+    }
+
+    // --- LÓGICA DO JOGO ---
+    function startGame() {
+        state.playerName = playerNameInput.value.trim() || 'Anônimo';
+        initState(); // Reinicia o estado, mas mantém o nome do jogador
+        state.playerName = playerNameInput.value.trim() || 'Anônimo'; // Reaplica o nome
+        state.shuffledQuestions = shuffleArray(questions);
+
+        scoreElement.innerText = state.score;
+        showScreen('quiz');
+        loadNextQuestion();
+    }
+
+    function loadNextQuestion() {
+        resetForNextQuestion();
+        if (state.currentQuestionIndex >= state.shuffledQuestions.length) {
+            endGame();
+            return;
+        }
+
+        const question = state.shuffledQuestions[state.currentQuestionIndex];
+        questionElement.innerText = question.pergunta;
+        
+        const shuffledOptions = shuffleArray(question.opcoes);
+        shuffledOptions.forEach(opcao => {
+            const button = document.createElement('button');
+            button.innerText = opcao;
+            button.classList.add('option');
+            button.addEventListener('click', () => selectAnswer(button, question));
+            optionsContainer.appendChild(button);
+        });
+
+        questionCounter.innerText = `${state.currentQuestionIndex + 1}/${state.shuffledQuestions.length}`;
+        progressBar.style.width = `${((state.currentQuestionIndex) / state.shuffledQuestions.length) * 100}%`;
+
+        startTimer();
+    }
+    
+    function resetForNextQuestion() {
+        clearInterval(state.timerInterval);
+        optionsContainer.innerHTML = '';
+        feedbackText.innerText = '';
+        nextButton.classList.add('hide');
+    }
+
+    function startTimer() {
+        state.timeLeft = TIME_PER_QUESTION;
+        state.questionStartTime = Date.now();
+        timerBarInner.style.transition = 'none';
+        timerBarInner.style.width = '100%';
+
+        setTimeout(() => {
+            timerBarInner.style.transition = `width ${TIME_PER_QUESTION}s linear`;
+            timerBarInner.style.width = '0%';
+        }, 100);
+
+        state.timerInterval = setInterval(() => {
+            if (state.timeLeft < 0) {
+                clearInterval(state.timerInterval);
+                selectAnswer(null, state.shuffledQuestions[state.currentQuestionIndex]);
             }
+            state.timeLeft--;
+        }, 1000);
+    }
+
+    function selectAnswer(selectedButton, question) {
+        clearInterval(state.timerInterval);
+        const timeTaken = (Date.now() - state.questionStartTime) / 1000;
+        const isCorrect = selectedButton && selectedButton.innerText === question.resposta;
+
+        Array.from(optionsContainer.children).forEach(button => {
+            if (button.innerText === question.resposta) button.classList.add('correct');
+            else if (button === selectedButton) button.classList.add('incorrect');
+            button.disabled = true;
+        });
+
+        if (isCorrect) {
+            const points = calculatePoints(question.dificuldade, timeTaken);
+            state.score += points;
+            scoreElement.innerText = state.score;
+            feedbackText.innerText = `Correto! +${points} pontos`;
+            feedbackText.style.color = 'var(--correct-color)';
+        } else {
+            feedbackText.innerText = selectedButton ? 'Incorreto!' : 'Tempo esgotado!';
+            feedbackText.style.color = 'var(--incorrect-color)';
+        }
+
+        setTimeout(() => {
+            feedbackText.innerText = `Explicação: ${question.explicacao}`;
+            nextButton.classList.remove('hide');
+        }, 2000);
+    }
+    
+    function calculatePoints(difficulty, timeTaken) {
+        const basePoints = { 'facil': 100, 'medio': 150, 'dificil': 200 };
+        const timeBonus = Math.max(0, Math.round((TIME_PER_QUESTION - timeTaken) * 10));
+        return basePoints[difficulty] + timeBonus;
+    }
+
+    function endGame() {
+        progressBar.style.width = '100%';
+        endTitle.innerText = "Fim de Jogo!";
+        endFeedbackText.innerText = "Parabéns por concluir o desafio!";
+        finalScoreElement.parentElement.classList.remove('hide');
+        restartButton.classList.remove('hide');
+        goHomeButton.classList.remove('hide');
+        
+        finalScoreElement.innerText = state.score;
+        saveAndShowRanking();
+        showScreen('end');
+    }
+
+    // --- LÓGICA DO RANKING ---
+    function saveAndShowRanking() {
+        const ranking = getRanking();
+        ranking.push({ name: state.playerName, score: state.score });
+        ranking.sort((a, b) => b.score - a.score);
+        localStorage.setItem('quizRanking', JSON.stringify(ranking.slice(0, 5)));
+        loadRanking();
+    }
+
+    function getRanking() {
+        try {
+            const ranking = JSON.parse(localStorage.getItem('quizRanking'));
+            return Array.isArray(ranking) ? ranking : [];
+        } catch (e) {
+            return [];
+        }
+    }
+    
+    function loadRanking() {
+        const ranking = getRanking();
+        rankingList.innerHTML = '';
+        if (ranking.length === 0) {
+            rankingList.innerHTML = '<li>Ainda não há pontuações. Seja o primeiro!</li>';
+        } else {
+            ranking.forEach(entry => {
+                const li = document.createElement('li');
+                li.innerHTML = `<span>${entry.name}</span><strong>${entry.score}</strong>`;
+                rankingList.appendChild(li);
+            });
+        }
+    }
+
+    // --- INICIALIZAÇÃO E EVENTOS ---
+    function init() {
+        initState();
+        showScreen('home');
+        
+        startButton.addEventListener('click', startGame);
+        restartButton.addEventListener('click', startGame);
+        goHomeButton.addEventListener('click', () => showScreen('home'));
+        navHome.addEventListener('click', (e) => { e.preventDefault(); showScreen('home'); });
+        navRanking.addEventListener('click', (e) => { e.preventDefault(); showScreen('ranking'); });
+        
+        nextButton.addEventListener('click', () => {
+            state.currentQuestionIndex++;
+            loadNextQuestion();
+        });
+        
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
         });
     }
-    desabilitarOpcoes();
-}
 
-function proximaPergunta() {
-    perguntaAtual++;
-    if (perguntaAtual < perguntas.length) {
-        carregarPergunta();
-    } else {
-        mostrarResultado();
-    }
-}
+    return { init };
+})();
 
-function carregarPergunta() {
-    const pergunta = perguntas[perguntaAtual];
-    
-    document.getElementById('question-number').innerText = `Pergunta ${perguntaAtual + 1} de ${perguntas.length}`;
-    document.getElementById('question').innerText = pergunta.pergunta;
-    
-    const opcoesContainer = document.querySelector('.options');
-    opcoesContainer.innerHTML = '';
-
-    pergunta.opcoes.forEach((opcao, index) => {
-        const botao = document.createElement('button');
-        botao.classList.add('option');
-        botao.innerText = opcao.texto;
-        botao.disabled = false;
-        botao.classList.remove('correto', 'errado');
-        botao.setAttribute('onclick', `verificarResposta(this, '${opcao.correto ? 'correto' : 'errado'}')`);
-        
-        opcoesContainer.appendChild(botao); 
-    });
-}
-
-function mostrarResultado() {
-    clearInterval(timerInterval); 
-    const container = document.querySelector('.quiz-container');
-    
-    let feedback;
-    if (acertos >= 12) {
-        feedback = "Excelente! Você tem um ótimo conhecimento de lógica!";
-    } else if (acertos >= 8) {
-        feedback = "Bom trabalho! Você está no caminho certo com a lógica.";
-    } else {
-        feedback = "Continue praticando! A lógica pode ser difícil, mas você chega lá.";
-    }
-    
-    container.innerHTML = `
-        <h2>Fim do Quiz</h2>
-        <p>Você acertou ${acertos} de ${perguntas.length} perguntas.</p>
-        <p>Erros: ${erros}</p>
-        <p>${feedback}</p>
-        <button id="reiniciar-quiz" class="botao" onclick="reiniciarQuiz()">Reiniciar Quiz</button>
-    `;
-}
-function embaralharArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-const perguntasOriginal = [...perguntas];
-
-function reiniciarQuiz() {
-    const container = document.querySelector('.quiz-container');
-    
-    container.innerHTML = `
-        <div id="question" class="question-text"></div>
-        <div class="options"></div>
-        <button id="proxima-pergunta" class="botao" onclick="proximaPergunta()">Próxima Pergunta</button>
-    `;
-    
-    perguntaAtual = 0;
-    acertos = 0;
-    erros = 0;
-    tempoRestante = 210;
-    embaralharArray(perguntas);
-    
-    iniciarQuiz(); 
-}
-
-
-document.addEventListener('DOMContentLoaded', iniciarQuiz);
+// Inicia a aplicação quando o DOM estiver pronto.
+document.addEventListener('DOMContentLoaded', QuizApp.init);
