@@ -6,46 +6,46 @@
 <br>
 
 <p align="center">
-  <img src="URL_DO_SEU_GIF_OU_SCREENSHOT_AQUI" alt="Demonstração do Quiz de Lógica" width="80%">
+  <img src="https://github.com/JoaoPedro-Costa-Oliveira/Quiz-Logica-JOGO/blob/main/quiz-demo.gif?raw=true" alt="Demonstração do Quiz de Lógica" width="85%">
 </p>
 
 <p align="center">
-  Um quiz interativo e desafiador desenvolvido como projeto acadêmico para a disciplina de Lógica Matemática na Cesar School.
+  Um quiz interativo e desafiador desenvolvido como projeto acadêmico para a disciplina de Lógica Matemática no curso de Sistemas de Informação da Cesar School.
 </p>
 
 <p align="center">
-  <a href="https://quiz-logica.netlify.app/"><strong>Acessar Demonstração Ao Vivo »</strong></a>
+  <a href="https://quiz-logica.netlify.app/"><strong>▶️ Acessar Demonstração Ao Vivo »</strong></a>
 </p>
 
 ---
 
 ## 🚀 Sobre o Projeto
 
-Este projeto é uma **Aplicação de Página Única (SPA)** desenvolvida com HTML, CSS e JavaScript puro, que gamifica o aprendizado de conceitos fundamentais de lógica. A aplicação foi criada com foco em boas práticas de desenvolvimento web, design responsivo e uma experiência de usuário fluida e intuitiva.
+Este projeto é uma **Aplicação de Página Única (SPA)** que gamifica o aprendizado de conceitos fundamentais de lógica. Foi desenvolvido com **HTML, CSS e JavaScript puro**, com foco em criar uma ferramenta de estudo que seja ao mesmo tempo educativa e divertida.
 
-O objetivo principal é transformar o estudo da lógica, muitas vezes abstrato, em uma atividade prática e engajadora, servindo como uma ferramenta de reforço e autoavaliação para estudantes.
+O objetivo principal foi transformar o estudo da lógica, muitas vezes abstrato, em uma atividade prática e engajadora, servindo como uma ferramenta de reforço e autoavaliação para estudantes. O projeto foi criado com foco em boas práticas de desenvolvimento web, design responsivo e uma experiência de usuário fluida.
 
 ### ✨ Funcionalidades Principais
 
 * **Arquitetura SPA:** Navegação rápida e dinâmica sem recarregamento da página.
-* **Design Profissional:** Interface moderna e responsiva, inspirada na identidade visual da Cesar School.
+* **Design Profissional e Responsivo:** Interface moderna que se adapta a desktops, tablets e smartphones.
 * **Gamificação Completa:**
     * **Pontuação Dinâmica:** Baseada na dificuldade da pergunta e no tempo de resposta.
-    * **Ranking Persistente:** O Top 5 é salvo no navegador do usuário via `localStorage`.
+    * **Ranking Persistente:** O Top 5 de jogadores é salvo no navegador via `localStorage`.
     * **Timer Individual:** Cada pergunta tem um cronômetro para aumentar o desafio.
-* **Alta Rejogabilidade:** As perguntas e as opções de resposta são embaralhadas a cada nova partida.
+* **Alta Rejogabilidade:** As perguntas e suas respectivas opções de resposta são embaralhadas a cada nova partida.
 * **Feedback Construtivo:** Explicações claras são fornecidas após cada resposta para reforçar o aprendizado.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Tecnologias e Aprendizados
 
-O projeto foi construído utilizando as tecnologias essenciais do front-end:
+O projeto foi construído utilizando as tecnologias essenciais do front-end e proporcionou aprendizados valiosos em:
 
-* **HTML5:** Para a estrutura semântica do conteúdo.
-* **CSS3:** Para o design, layout responsivo e animações, utilizando Flexbox, Grid e Variáveis CSS.
-* **JavaScript (ES6+):** Para toda a lógica do jogo, manipulação do DOM e gerenciamento de estado da aplicação.
-* **Netlify:** Para o deploy contínuo e hospedagem da aplicação.
+* **HTML5:** Estruturação semântica do conteúdo.
+* **CSS3:** Design responsivo com Flexbox, Grid e animações.
+* **JavaScript (ES6+):** Manipulação avançada do DOM, gerenciamento de estado e lógica de jogo.
+* **Netlify:** Automação de deploy contínuo e hospedagem.
 
 <p align="center">
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
@@ -78,5 +78,5 @@ Para rodar o projeto em sua máquina, siga os passos abaixo:
 | :---: |
 
 <p align="center">
-  Feito com ❤️ por João Pedro. <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-costa-de-oliveira-1bb5912b8/" target="_blank">Entre em contato!</a>
+  Feito com ❤️ para a Cesar School. <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-costa-de-oliveira-1bb5912b8/" target="_blank">Entre em contato!</a>
 </p>
